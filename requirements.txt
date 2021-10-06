@@ -1,0 +1,8 @@
+requests
+python-dotenv
+selenium
+webdriver_manager
+beautifulsoup4
+lxml
+python-amazon-sp-api
+pandas
