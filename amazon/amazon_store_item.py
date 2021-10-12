@@ -3,8 +3,12 @@ import pandas as pd
 
 
 
-def amazon_store_item():
+def amazon_fetch_store_item():
     store_list =  pd.read_csv("csv/amazon/amazon_store_list.csv").values.tolist()
     for store in store_list:
-        item_list = fetch_store_items(store)
-            
+        res = Catalog(Marketplaces.JP).list_items(Query='A1ZLLAC8MKRGW')
+        
+
+
+if __name__ == "__main__":
+    amazon_fetch_store_item()
