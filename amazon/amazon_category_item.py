@@ -5,6 +5,7 @@ load_dotenv() #環境変数のロード
 from sp_api.api import CatalogItems
 from sp_api.base.marketplaces import Marketplaces
 import pandas as pd
+import time
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
@@ -30,6 +31,7 @@ def amazon_fetch_category_item():
                         amazon_category_item_list.append([asin,item_name])
             elif next_token != None:
                 item_list = CatalogItems(Marketplaces.JP).search_catalog_items(keywords=category,pageSize=20,pageToken=next_token)
+                time.sleep(1)
                 item_count = len(item_list.payload.get('items'))
                 next_token = item_list.pagination.get('nextToken')
 

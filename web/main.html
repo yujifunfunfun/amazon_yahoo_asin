@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ASIN</title>
+</head>
+<body class="px-4 pt-3">
+    <style>
+    .spu p{
+        display:inline-block;
+    }
+    
+    </style>
+    <h2 class="mb-3">ASIN収集</h2>
+    <div class="mb-2">
+        <form name="form1">
+            <input class ="mr-1" type="checkbox" name="filter" value="yahoo_store" id="checkbox1" /><label for="checkbox1"> ヤフショ高評価ストア</label>
+            <br>
+            <input class ="mr-1" type="checkbox" name="filter" value="yahoo_ranking" id="checkbox2" /><label for="checkbox2"> ヤフショ売れ筋ランキング</label>
+            <br>
+            <input class ="mr-1" type="checkbox" name="filter" value="yahoo_category_ranking" id="checkbox3" /><label for="checkbox3">ヤフショカテゴリーランキング</label>
+            <!-- <br> -->
+            <!-- <input class ="mr-1" type="checkbox" name="filter" value="category" id="checkbox4" /><label for="checkbox4">カテゴリー</label> -->
+        </form>
+    </div>
+    <button id="search" class="bg-primary text-white border-primary rounded-pill">実行</button>
+    <div class="mt-4">
+        <p class="mb-0">処理の進行状況確認欄</p>
+        <textarea id="result" cols="30" rows="10"></textarea>
+    </div>
+
+    <script type="text/javascript" src="./eel.js"></script>
+    <script>
+
+        search.addEventListener('click', () => {
+            const arr1 = [];
+            const filter = document.form1.filter;
+
+            for (let i = 0; i < filter.length; i++) {
+                if (filter[i].checked) { //(filter[i].checked === true)と同じ
+                    arr1.push(filter[i].value);
+                }
+            }
+            eel.main(arr1)
+    })
+
+        eel.expose(view_log_js)
+        function view_log_js(text){
+            result.value += text + '\n'
+        }
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

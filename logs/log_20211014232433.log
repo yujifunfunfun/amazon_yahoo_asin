@@ -1,0 +1,6 @@
+2021-10-14 23:24:33,823 - INFO - yahoo_store_item.py - __main__ - fetch_yahoo_item_data - 67 - 'NoneType' object has no attribute 'group'
+2021-10-14 23:24:34,580 - INFO - yahoo_store_item.py - __main__ - fetch_yahoo_item_data - 67 - 'NoneType' object has no attribute 'group'
+2021-10-14 23:24:35,207 - INFO - yahoo_store_item.py - __main__ - fetch_yahoo_item_data - 67 - 'NoneType' object has no attribute 'group'
+2021-10-14 23:24:35,599 - INFO - yahoo_store_item.py - __main__ - fetch_yahoo_item_data - 67 - 'NoneType' object has no attribute 'group'
+2021-10-14 23:24:36,860 - INFO - yahoo_store_item.py - __main__ - fetch_yahoo_item_data - 67 - 'NoneType' object has no attribute 'group'
+2021-10-14 23:24:37,284 - INFO - yahoo_store_item.py - __main__ - fetch_yahoo_item_data - 67 - 'NoneType' object has no attribute 'group'
