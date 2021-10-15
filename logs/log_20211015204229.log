@@ -1,0 +1,1 @@
+2021-10-15 20:43:03,085 - INFO - fetch_item_data.py - asin_to_jan - fetch_item_data - 75 - 'shift_jis' codec can't encode character '\uff5e' in position 35: illegal multibyte sequence

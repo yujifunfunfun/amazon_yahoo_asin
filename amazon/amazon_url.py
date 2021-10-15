@@ -1,23 +1,25 @@
 import re
 import csv
-
-
+import numpy as np
 
 def download_target_url():
-    csv_file = open('csv/yahoo/yahoo_store_list.csv','r',newline='')
+    csv_file = open('csv/amazon/amazon_url_list.csv','r',newline='')
     url_list = [] 
     for row in csv.reader(csv_file):
-        store_list.append(row[0])
+        url_list.append(row[0])
     return url_list
 
-def fetch_jan_by_code():
+def fetch_asin_by_url():
+    url_list = download_target_url()
+    asin_list = []
+    p = re.compile(r'[^0-9A-Z]([0-9A-Z]{10})([^0-9A-Z]|$)')
+    for url in url_list:
+        try:
+            asin = p.search(url).group(1)
+            asin_list.append([asin,url])
+        except Exception as e:
+            pass
+    np.savetxt("asin_list.csv", asin_list, delimiter =",",fmt ='% s')
 
-    p = re.compile(r'(?<!\d)\d{11,12}(?!\d)')
-    q = re.compile(r'(?<!\d)\d{13,14}(?!\d)')
-    if p.search(code) != None:
-            jan = p.search(code).group()
-    elif q.search(code) != None:
-            jan = q.search(code).group()
-    else:
-        jan = 'None'
-    return jan
+if __name__ == "__main__":
+    fetch_asin_by_url()

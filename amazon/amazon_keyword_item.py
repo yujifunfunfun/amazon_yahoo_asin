@@ -32,7 +32,7 @@ def keyword_modify(keyword_list):
 
 
 def fetch_keyword_search_item_by_amazon(keyword_list):
-    page_size = 2
+    page_size = 100
     amazon_item_data = []
     keyword_list = keyword_modify(keyword_list)
     for keyword in keyword_list:

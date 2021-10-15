@@ -1,0 +1,3 @@
+2021-10-15 20:33:04,867 - INFO - fetch_item_data.py - asin_to_jan - fetch_item_data - 62 - URLからASIN取得完了
+2021-10-15 20:34:19,326 - INFO - fetch_item_data.py - asin_to_jan - fetch_item_data - 62 - URLからASIN取得完了
+2021-10-15 20:37:03,499 - INFO - fetch_item_data.py - asin_to_jan - fetch_item_data - 40 - 売れ筋ランキング商品検索完了
